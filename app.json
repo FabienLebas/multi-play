@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "multi-play",
+    "slug": "multi-play",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "multi-play"
+}

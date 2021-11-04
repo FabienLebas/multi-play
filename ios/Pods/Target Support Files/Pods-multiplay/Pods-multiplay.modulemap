@@ -1,0 +1,6 @@
+module Pods_multiplay {
+  umbrella header "Pods-multiplay-umbrella.h"
+
+  export *
+  module * { export * }
+}
