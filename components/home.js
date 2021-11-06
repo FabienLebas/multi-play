@@ -9,7 +9,7 @@ const HomeScreen = ({ navigation }) => {
       <Text style={styles.intro}>Notre tout premier jeu :</Text>
       <Button
         onPress={() => {
-          navigation.navigate('Chifoumi', { name: 'Jane' })
+          navigation.navigate('Chifoumi')
         }}
         title='CHIFOUMI'
         type='outline'

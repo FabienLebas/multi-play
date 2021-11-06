@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack' ;
 
 import HomeScreen from './components/home';
-import Chifoumi from './components/chifoumi';
+import Chifoumi from './components/chifoumi/chifoumi';
 
 const Stack = createNativeStackNavigator();
 
