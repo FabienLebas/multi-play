@@ -8,28 +8,46 @@ const Computer = (props) => {
   const computerChoose = () => {
     const random = Math.random();
     if (random < 0.3){
-      setComputerChoice('Pierre');
-      props.giveMyChoice('Pierre');
+      setComputerChoice('rock');
+      props.giveMyChoice('rock');
     } else if (random < 0.6){
-      setComputerChoice('Feuille');
-      props.giveMyChoice('Feuille');
+      setComputerChoice('paper');
+      props.giveMyChoice('paper');
     } else {
-      setComputerChoice('Ciseaux');
-      props.giveMyChoice('Ciseaux');
+      setComputerChoice('scissors');
+      props.giveMyChoice('scissors');
     }
   }
 
-  return(
-    <View>
-      <Text style={styles.player}>Ordinateur</Text>
-      <Button
-        onPress={computerChoose}
-        title="Faire choisir l'ordinateur"
-        style={styles.button}
-      />
-      <Text>Ordinateur : {computerChoice} / Adversaire : {props.opponentChoice}</Text>
-    </View>
-  )
+  if (props.newGameRequested === true && computerChoice !== ''){
+    setComputerChoice('');
+    props.giveMyChoice('');
+    props.setNewGameRequested(false);
+  }
+  if (computerChoice !== ''){
+    return(
+      <View>
+        <Text style={styles.player}>Ordinateur</Text>
+        <Button
+          onPress={computerChoose}
+          title="L'ordinateur a choisi"
+          style={styles.button}
+          disabled
+        />
+      </View>
+    )
+  } else {
+    return(
+      <View>
+        <Text style={styles.player}>Ordinateur</Text>
+        <Button
+          onPress={computerChoose}
+          title="Faire choisir l'ordinateur"
+          style={styles.button}
+        />
+      </View>
+    )
+  }
 }
 
 export default Computer;
